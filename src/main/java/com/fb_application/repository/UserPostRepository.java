@@ -1,6 +1,6 @@
-package com.fbpost.springbootFBCRUDMySql.repository;
+package com.fb_application.repository;
 
-import com.fbpost.springbootFBCRUDMySql.entity.UserPost;
+import com.fb_application.entity.UserPost;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

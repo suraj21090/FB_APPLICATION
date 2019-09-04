@@ -1,6 +1,6 @@
-package com.fbpost.springbootFBCRUDMySql.repository;
+package com.fb_application.repository;
 
-import com.fbpost.springbootFBCRUDMySql.entity.UserAccount;
+import com.fb_application.entity.UserAccount;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,4 +1,4 @@
-package com.fbpost.springbootFBCRUDMySql;
+package com.fb_application;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

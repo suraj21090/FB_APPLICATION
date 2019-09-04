@@ -1,6 +1,6 @@
-package com.fbpost.springbootFBCRUDMySql.repository;
+package com.fb_application.repository;
 
-import com.fbpost.springbootFBCRUDMySql.entity.Like;
+import com.fb_application.entity.Like;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import java.util.*;

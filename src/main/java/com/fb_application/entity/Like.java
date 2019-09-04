@@ -1,16 +1,23 @@
-package com.fbpost.springbootFBCRUDMySql.entity;
+package com.fb_application.entity;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="post_share")
-public class Share {
+@Table(name = "post_like")
+public class Like {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column
     private Long userId;
+
+    @JsonIgnoreProperties("like")
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "post_id")
     private UserPost userPost;

@@ -1,4 +1,8 @@
-package com.fbpost.springbootFBCRUDMySql.entity;
+package com.fb_application.entity;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.*;
@@ -14,16 +18,24 @@ public class UserPost {
     @Column
     private String postType;
 
+    @JsonIgnoreProperties("UserPost")
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="id", nullable=false)
     private UserAccount userAccount;
 
+     @JsonManagedReference
+     @JsonIgnoreProperties("userpost")
     @OneToMany(mappedBy = "userPost")
     private List<Like> like;
 
+    @JsonManagedReference
+    @JsonIgnoreProperties("userpost")
     @OneToMany(mappedBy = "userPost")
     private List<Share> status;
 
+    @JsonManagedReference
+    @JsonIgnoreProperties("userpost")
     @OneToMany(mappedBy = "userPost")
     private List<Comments> comments;
 

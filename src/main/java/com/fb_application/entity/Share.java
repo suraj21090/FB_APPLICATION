@@ -1,25 +1,25 @@
-package com.fbpost.springbootFBCRUDMySql.entity;
+package com.fb_application.entity;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name="post_comments")
-public class Comments {
+@Table(name="post_share")
+public class Share {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column
-    private String comment;
-    @Column
-    private Long commentReplyId;
     @Column
     private Long userId;
 
+    @JsonIgnoreProperties("share")
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "post_id")
-    private  UserPost userPost;
+    private UserPost userPost;
 
     public Long getId() {
         return id;
@@ -27,22 +27,6 @@ public class Comments {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    public Long getCommentReplyId() {
-        return commentReplyId;
-    }
-
-    public void setCommentReplyId(Long commentReplyId) {
-        this.commentReplyId = commentReplyId;
     }
 
     public Long getUserId() {

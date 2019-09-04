@@ -1,5 +1,8 @@
-package com.fbpost.springbootFBCRUDMySql.entity;
+package com.fb_application.entity;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.*;
@@ -19,6 +22,8 @@ public class UserAccount {
     @Column
     private String userEmail;
 
+    @JsonIgnoreProperties("UserAccount")
+    @JsonManagedReference
     @OneToMany(mappedBy = "userAccount",fetch =FetchType.LAZY,cascade = CascadeType.ALL)
     private List<UserPost> userPost;
 
